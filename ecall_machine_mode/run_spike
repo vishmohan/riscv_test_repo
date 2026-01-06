@@ -1,0 +1,1 @@
+ spike -l --log-commits  --pc=0x80000000 --isa=rv64gcv_zba_zbb_zbs_svinval test_ecall_machine_mode.elf 2> spike.log 
