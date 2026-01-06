@@ -1,3 +1,8 @@
+#==================================
+#Test executes ecall in machine mode
+#enters the handler and jumps to test_end
+#==================================
+
     .option norvc
 
     #machine mode code begins here
