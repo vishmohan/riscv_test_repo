@@ -1,0 +1,2 @@
+Use make to build the test
+Use the cmd from run_spike to run the elf on the spike - the output will be in spike.log
