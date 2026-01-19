@@ -1,0 +1,26 @@
+Generate software interrupt in 4 steps:
+
+Step 1:
+Handling software interrupt:
+    - set up the mtvec csr in vectored addressing mode bits 1:0 = 01
+    - the M mode software interrupt has IID = 3  => the entry point into the handler will be [base + 4*3] 
+    - set up a jump in the 12th byte of the interrupt handler to handle software interrupt.
+
+Step 2:
+   - Enable interrupts globally for machine mode
+        - set mstatus.MIE
+        - This enables interrupts to be taken in Machine Mode
+
+Step 3:  
+   - Enable local software interrupt in mie(Machine Interrupt enable) csr
+        - This enables recognition of software interrupts if it ever gets pending
+
+
+Step 4:
+   - Write to CLINT memory mapped register at offset 0 to set software interrupt pending for core/hart0.
+   - Only bit0 is writable. The rest of the bits are hardwired to zero.
+   - The CLINT base address is 0x0200_0000 [see platform.h in spike source for the mapping]
+   - A write to this address(offset=0) causes a software interrupt to be pending in mip.
+
+
+
