@@ -1,6 +1,6 @@
 Before using this repository please follow the steps below:
 
-Step 1: Install riscv tool chain:
+Step1: Install riscv tool chain:
 ---------------------------------
 To install riscv tool chain see instructions in:
 https://github.com/riscv-collab/riscv-gnu-toolchain
@@ -8,7 +8,7 @@ https://github.com/riscv-collab/riscv-gnu-toolchain
 Use the install option with multi-lib:
 ./configure --prefix=/opt/riscv --enable-multilib
 
-Step 2: Install spike
+Step2: Install spike
 ---------------------
 Use instructions in:
 https://github.com/riscv-software-src/riscv-isa-sim
